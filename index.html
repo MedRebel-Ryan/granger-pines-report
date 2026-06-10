@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Granger Pines Dental | Campaign Intelligence Report | June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========================================================
+   EXECUTIVE BRIEF DESIGN SYSTEM
+   Source: MedRebel Executive Partner Brief (April 2026)
+   ======================================================== */
+
+:root {
+  --navy: #0A1326;
+  --navy-light: #0F1D36;
+  --navy-card: #111D33;
+  --cyan: #00BFFF;
+  --cyan-glow: rgba(0,191,255,0.15);
+  --royal: #0055CC;
+  --blue: #007BFF;
+  --white: #FFFFFF;
+  --gray-100: #F0F4F8;
+  --gray-200: #D1D9E6;
+  --gray-300: #A0AEC0;
+  --gray-400: #718096;
+  --green: #00E676;
+  --purple: #8B5CF6;
+  --red-warning: #FF5252;
+  --gradient-cyan: linear-gradient(135deg, #00BFFF, #0055CC);
+  --gradient-green: linear-gradient(135deg, #00E676, #00BFFF);
+  --gradient-purple: linear-gradient(135deg, #8B5CF6, #6D28D9);
+  --gradient-fire: linear-gradient(135deg, #00E676, #00BFFF);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--navy);
+  color: var(--gray-100);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* NAV */
+nav {
+  background: rgba(10,19,38,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,191,255,0.12);
+  padding: 14px 0;
+  position: sticky; top:0; z-index:100;
+}
+nav .container { display:flex; align-items:center; justify-content:space-between; }
+.nav-logo { height: 34px; display: block; filter: brightness(1); }
+.doc-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(0,191,255,0.08);
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,191,255,0.2);
+}
+.nav-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gray-400);
+}
+
+/* HERO */
+.hero {
+  padding: 100px 0 70px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,191,255,0.08);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(0,191,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero .mono-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 20px;
+  display: block;
+}
+.hero h1 {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--white) 0%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .subtitle {
+  font-size: 20px;
+  color: var(--gray-300);
+  max-width: 740px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+.hero-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.badge-green {
+  background: rgba(0,230,118,0.1);
+  border: 1px solid rgba(0,230,118,0.3);
+  color: var(--green);
+}
+.badge-cyan {
+  background: rgba(0,191,255,0.1);
+  border: 1px solid rgba(0,191,255,0.3);
+  color: var(--cyan);
+}
+.badge-purple {
+  background: rgba(139,92,246,0.12);
+  border: 1px solid rgba(139,92,246,0.35);
+  color: var(--purple);
+}
+.badge-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+.badge-green .badge-dot { background: var(--green); }
+.badge-cyan .badge-dot { background: var(--cyan); }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* SECTIONS */
+.section { padding: 70px 0; border-bottom: 1px solid rgba(0,191,255,0.06); }
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 12px;
+  display: block;
+}
+.section h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--white);
+  line-height: 1.2;
+}
+.section p { color: var(--gray-200); margin-bottom: 16px; font-size: 16px; line-height: 1.75; }
+
+/* STAT CARDS */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 36px 0;
+}
+.stat-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(0,191,255,0.1);
+  border-radius: 12px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-cyan);
+}
+.stat-card .stat-value {
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--cyan);
+  margin-bottom: 6px;
+  line-height: 1;
+}
+.stat-card .stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 6px;
+}
+.stat-card .stat-sub {
+  font-size: 13px;
+  color: var(--gray-300);
+}
+
+/* INTEGRATION TABLE */
+.integration-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--navy-card);
+  border: 1px solid rgba(0,191,255,0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0 12px;
+}
+.integration-table th {
+  text-align: left;
+  padding: 14px 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(0,191,255,0.04);
+  border-bottom: 1px solid rgba(0,191,255,0.2);
+  font-weight: 700;
+}
+.integration-table th:last-child { text-align: right; }
+.integration-table td {
+  padding: 13px 20px;
+  color: var(--gray-200);
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.integration-table tr:last-child td { border-bottom: none; }
+.integration-table td:last-child {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--cyan);
+  white-space: nowrap;
+}
+.integration-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gray-400);
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
+/* PROOF POINTS */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 36px 0;
+}
+.proof-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(0,191,255,0.1);
+  border-radius: 10px;
+  padding: 24px;
+  border-left: 3px solid var(--cyan);
+}
+.proof-card.green { border-left-color: var(--green); }
+.proof-card.purple { border-left-color: var(--purple); }
+.proof-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.proof-card p { font-size: 14px; color: var(--gray-300); margin-bottom: 0; }
+.proof-metric {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--cyan);
+  margin-bottom: 4px;
+}
+.proof-card.green .proof-metric { color: var(--green); }
+.proof-card.purple .proof-metric { color: var(--purple); }
+
+/* CALLOUT */
+.callout {
+  background: rgba(0,191,255,0.06);
+  border: 1px solid rgba(0,191,255,0.15);
+  border-left: 4px solid var(--cyan);
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin: 28px 0;
+}
+.callout.green {
+  background: rgba(0,230,118,0.06);
+  border-color: rgba(0,230,118,0.15);
+  border-left-color: var(--green);
+}
+.callout.purple {
+  background: rgba(139,92,246,0.06);
+  border-color: rgba(139,92,246,0.15);
+  border-left-color: var(--purple);
+}
+.callout.fire {
+  background: rgba(255,82,82,0.06);
+  border-color: rgba(255,82,82,0.15);
+  border-left-color: #FF5252;
+}
+.callout h4 { color: var(--white); margin-bottom: 8px; font-size: 16px; font-weight: 700; }
+.callout p { color: var(--gray-200); margin-bottom: 0; font-size: 15px; }
+
+/* PARTNERSHIP CARD */
+.partnership-section {
+  background: linear-gradient(135deg, rgba(0,191,255,0.06) 0%, rgba(0,85,204,0.06) 100%);
+  border: 1px solid rgba(0,191,255,0.2);
+  border-radius: 16px;
+  padding: 48px;
+  margin: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+.partnership-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--gradient-cyan);
+}
+.partner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+.partner-card {
+  background: rgba(10,19,38,0.6);
+  border: 1px solid rgba(0,191,255,0.15);
+  border-radius: 12px;
+  padding: 28px;
+}
+.partner-card .partner-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 8px;
+  display: block;
+}
+.partner-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.partner-card p {
+  font-size: 14px;
+  color: var(--gray-300);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.impact-pill {
+  background: rgba(0,191,255,0.06);
+  border: 1px solid rgba(0,191,255,0.15);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.impact-pill .impact-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+.impact-pill .impact-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.impact-pill .impact-desc { font-size: 12px; color: var(--gray-400); }
+
+/* ROADMAP TABLE */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 36px 0;
+}
+.roadmap-phase {
+  background: var(--navy-card);
+  border: 1px solid rgba(0,191,255,0.1);
+  border-radius: 12px;
+  padding: 28px;
+}
+.roadmap-phase .phase-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(0,191,255,0.08);
+  border: 1px solid rgba(0,191,255,0.2);
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+.roadmap-phase .phase-tag.green {
+  color: var(--green);
+  background: rgba(0,230,118,0.08);
+  border-color: rgba(0,230,118,0.2);
+}
+.roadmap-phase .phase-tag.purple {
+  color: var(--purple);
+  background: rgba(139,92,246,0.08);
+  border-color: rgba(139,92,246,0.2);
+}
+.roadmap-phase h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.roadmap-list { list-style: none; }
+.roadmap-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--gray-200);
+  border-bottom: 1px solid rgba(0,191,255,0.05);
+}
+.roadmap-list li:last-child { border-bottom: none; }
+.roadmap-list li::before {
+  content: '';
+  color: var(--cyan);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* UNIT ECONOMICS */
+.unit-econ {
+  margin: 56px 0 40px;
+  padding: 44px 40px;
+  background: linear-gradient(135deg, rgba(11,21,48,0.85) 0%, rgba(6,13,32,0.85) 100%);
+  border: 1px solid rgba(0,191,255,0.18);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.unit-econ::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-cyan);
+}
+.unit-econ > p {
+  color: var(--gray-300);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+.unit-econ > p strong {
+  color: var(--cyan);
+  font-weight: 700;
+}
+.econ-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,191,255,0.18);
+}
+.econ-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(6,13,32,0.6);
+}
+.econ-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-align: left;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0,191,255,0.2);
+  background: rgba(0,191,255,0.06);
+}
+.econ-table td {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--gray-200);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.econ-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.econ-table tbody tr:hover td {
+  background: rgba(0,191,255,0.03);
+}
+.econ-footnote {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--gray-400);
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy-light);
+  border-top: 1px solid rgba(0,191,255,0.1);
+  padding: 40px 0;
+}
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo { height: 28px; }
+.footer-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gray-400);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.footer-conf {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--red-warning);
+  background: rgba(255,82,82,0.08);
+  border: 1px solid rgba(255,82,82,0.2);
+  padding: 5px 12px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* CUSTOM: stat-card red variant */
+.stat-card.red::before { background: linear-gradient(135deg, var(--red-warning), #D32F2F); }
+.stat-card.red .stat-value { color: var(--red-warning); }
+
+/* CUSTOM: proof-card red variant */
+.proof-card.red { border-left-color: var(--red-warning); }
+.proof-card.red .proof-metric { color: var(--red-warning); }
+
+/* CUSTOM: partner-card stat line */
+.partner-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 14px;
+}
+.partner-stat:last-child { border-bottom: none; }
+.partner-stat-label { color: var(--gray-300); }
+.partner-stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+/* CUSTOM: roadmap single column override */
+.roadmap-grid.single-col {
+  grid-template-columns: 1fr;
+}
+
+/* CUSTOM: roadmap list bullet */
+.roadmap-list.bulleted li::before {
+  content: '\25B8';
+  color: var(--cyan);
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-date { display: none; }
+  .doc-label { font-size: 9px; letter-spacing: 1px; padding: 5px 10px; }
+  nav .container { gap: 10px; }
+  .nav-logo svg, .nav-logo { height: 26px; }
+  .hero { padding: 60px 0 44px; }
+  .hero h1 { font-size: 30px; line-height: 1.15; }
+  .hero .subtitle { font-size: 15px; }
+  .hero-badges { gap: 10px; }
+  .badge { font-size: 10px; padding: 8px 12px; letter-spacing: 0.5px; }
+  .section { padding: 48px 0; }
+  .section h2 { font-size: 24px; }
+  .section p { font-size: 15px; }
+  .container { padding: 0 16px; }
+  .stat-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+  .stat-card { padding: 20px 16px; }
+  .stat-card .stat-value { font-size: 28px; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .partner-grid { grid-template-columns: 1fr; }
+  .partnership-section .partner-grid { grid-template-columns: 1fr; }
+  .impact-grid { grid-template-columns: 1fr; }
+  .roadmap-grid { grid-template-columns: 1fr; }
+  .partnership-section { padding: 28px 20px; }
+  .partner-card { padding: 20px; }
+  .unit-econ { padding: 28px 20px; margin: 36px 0 28px; }
+  .unit-econ h2 { font-size: 22px !important; }
+  .unit-econ > p { font-size: 14px; }
+  .econ-table th, .econ-table td { padding: 12px 14px; font-size: 12px; }
+  .econ-footnote { font-size: 12px; }
+  .callout { padding: 18px 20px; }
+  .integration-table th, .integration-table td { padding: 11px 14px; font-size: 13px; }
+  footer .container { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div style="font-weight:900; font-size:20px; color:var(--white);">MedRebel</div>
+    <span class="doc-label">Campaign Intelligence Report</span>
+    <span class="nav-date">June 2026 &middot; Confidential</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="mono-label">Prepared for Granger Pines Dental</span>
+    <h1>Campaign Intelligence Report</h1>
+    <p class="subtitle">A comprehensive analysis of postcard direct mail and Google Ads performance. Period: May 11 to June 10, 2026.</p>
+    <div class="hero-badges">
+      <span class="badge badge-green"><span class="badge-dot"></span>Postcard &middot; Active</span>
+      <span class="badge badge-cyan"><span class="badge-dot"></span>Google Ads &middot; Live</span>
+      <span class="badge badge-purple">Month 7 &middot; Year 1</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 01: CAMPAIGN PERFORMANCE -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Chapter 01 &middot; Campaign Performance</span>
+    <h2>The Postcard Is Working. The Data Proves It.</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-value">2,000</div>
+        <div class="stat-label">Postcards Delivered</div>
+        <div class="stat-sub">100% delivery rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">6</div>
+        <div class="stat-label">Calls Tracked</div>
+        <div class="stat-sub">Via dedicated tracking number</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">4</div>
+        <div class="stat-label">QR Code Scans</div>
+        <div class="stat-sub">0.20% scan rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2</div>
+        <div class="stat-label">New Patients Booked</div>
+        <div class="stat-sub">Confirmed, direct attribution</div>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto; border-radius:12px;">
+      <table class="integration-table">
+        <thead>
+          <tr>
+            <th>Campaign</th>
+            <th>Pieces Sent</th>
+            <th>QR Scans</th>
+            <th>Scan Rate</th>
+            <th>Total Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>November 2025 (Baseline)</td>
+            <td>5,000</td>
+            <td>9</td>
+            <td>0.18%</td>
+            <td>$3,776.30</td>
+          </tr>
+          <tr>
+            <td>May-June 2026 (Current)</td>
+            <td>2,000</td>
+            <td>4</td>
+            <td>0.20%</td>
+            <td>$1,944.65</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>QR scan rate is nearly identical across both campaigns at roughly 0.20% per piece. Consistent behavior regardless of volume. The current campaign added a tracking phone number for the first time, which is the primary reason it can demonstrate measurable ROI where November could not.</p>
+
+    <h3 style="font-size:20px; font-weight:700; color:var(--white); margin: 32px 0 8px;">Phone Call Breakdown</h3>
+
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-metric">5</div>
+        <h4>Total Calls Received</h4>
+      </div>
+      <div class="proof-card green">
+        <div class="proof-metric">2</div>
+        <h4>New Patients Scheduled</h4>
+      </div>
+      <div class="proof-card" style="border-left-color: var(--red-warning);">
+        <div class="proof-metric" style="color: var(--red-warning);">2</div>
+        <h4>Lost, No Follow-Up</h4>
+      </div>
+      <div class="proof-card" style="border-left-color: var(--purple);">
+        <div class="proof-metric" style="color: var(--purple);">1</div>
+        <h4>Unresolved, No Record</h4>
+      </div>
+    </div>
+
+    <p>2 of 5 tracked calls converted to new patient appointments. A confirmed, direct return on the campaign. 2 calls were lost without meaningful follow-up. 1 call has no record of outcome.</p>
+  </div>
+</section>
+
+<!-- CHAPTER 02: THE ATTRIBUTION PROBLEM -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Chapter 02 &middot; The Attribution Gap</span>
+    <h2>The Biggest Leak Is Not the Campaign. It Is the Intake.</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card red">
+        <div class="stat-value">0 / 29</div>
+        <div class="stat-label">Intake Question Asked</div>
+        <div class="stat-sub">Zero out of 29 new patient calls</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">~22</div>
+        <div class="stat-label">Unattributed Patients</div>
+        <div class="stat-sub">Phone-in new patients with no traceable source</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">7</div>
+        <div class="stat-label">Auto-Captured</div>
+        <div class="stat-sub">Source captured automatically via web form</div>
+      </div>
+    </div>
+
+    <p>One caller voluntarily shared their referral source. Every other phone-in new patient has no traceable origin. The intake question was not asked on a single call across the entire review period. This is not a campaign problem. It is a front desk protocol gap that prevents any channel, postcard or otherwise, from being accurately credited.</p>
+
+    <div class="callout fire">
+      <h4>How to Fix It</h4>
+      <p>Ask at every call, every time. "How did you hear about us?" takes three seconds and should be a required step before confirming any new patient appointment. Log it in the chart. The answer needs to go into the referral source field in Open Dental or a note in the patient record. If it is not logged, it does not exist for reporting purposes. Capture it after the visit if it was missed on the call. Front desk staff can ask at check-in or check-out.</p>
+    </div>
+
+    <div class="callout purple">
+      <h4>Staff Perception vs. The Data</h4>
+      <p>Staff have expressed that the November campaign felt more successful. December and November did show stronger new patient volume overall. But that comparison is not a campaign comparison. It is a seasonality comparison. November and December are historically high-volume months for dental new patient acquisition across the industry. May and June are not. Attributing stronger fall performance to the postcard, rather than to seasonal demand, is not supported by any data either campaign produced.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 03: GOOGLE ADS PERFORMANCE -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Chapter 03 &middot; Google Ads Intelligence</span>
+    <h2>Efficient Spend. Real Leads. Room to Scale.</h2>
+
+    <div class="partnership-section">
+      <div class="partner-grid">
+        <div class="partner-card">
+          <span class="partner-role">Your Practice</span>
+          <h3>Granger Pines Dental</h3>
+          <div class="partner-stat"><span class="partner-stat-label">Google Ad Spend</span><span class="partner-stat-value">$1,384</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Clicks</span><span class="partner-stat-value">171</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Avg CPC</span><span class="partner-stat-value">$8.09</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Incoming Calls</span><span class="partner-stat-value">206</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">New Callers</span><span class="partner-stat-value">61</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Answer Rate</span><span class="partner-stat-value">99.5%</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Website Leads</span><span class="partner-stat-value">12</span></div>
+          <div class="partner-stat"><span class="partner-stat-label" style="padding-left:16px; font-size:13px;">Contact Form</span><span class="partner-stat-value" style="font-size:13px;">9</span></div>
+          <div class="partner-stat"><span class="partner-stat-label" style="padding-left:16px; font-size:13px;">Chat</span><span class="partner-stat-value" style="font-size:13px;">3</span></div>
+        </div>
+        <div class="partner-card">
+          <span class="partner-role">MedRebel Benchmark</span>
+          <h3>Hockley Dental</h3>
+          <div class="partner-stat"><span class="partner-stat-label">Google Ad Spend</span><span class="partner-stat-value">$1,316</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Clicks</span><span class="partner-stat-value">167</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Avg CPC</span><span class="partner-stat-value">$7.88</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Incoming Calls</span><span class="partner-stat-value">1,040</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">New Callers</span><span class="partner-stat-value">169</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Answer Rate</span><span class="partner-stat-value">96%</span></div>
+          <div class="partner-stat"><span class="partner-stat-label">Website Leads</span><span class="partner-stat-value">48</span></div>
+          <div class="partner-stat"><span class="partner-stat-label" style="padding-left:16px; font-size:13px;">Contact Form</span><span class="partner-stat-value" style="font-size:13px;">38</span></div>
+          <div class="partner-stat"><span class="partner-stat-label" style="padding-left:16px; font-size:13px;">Chat</span><span class="partner-stat-value" style="font-size:13px;">10</span></div>
+        </div>
+      </div>
+
+      <div class="impact-grid">
+        <div class="impact-pill">
+          <span class="impact-icon">&#x1F465;</span>
+          <div class="impact-label">Population Gap</div>
+          <div class="impact-desc">GP ~27K vs Hockley ~60K today</div>
+        </div>
+        <div class="impact-pill">
+          <span class="impact-icon">&#x1F4C8;</span>
+          <div class="impact-label">4x Call Volume Gap</div>
+          <div class="impact-desc">206 vs 1,040 incoming calls</div>
+        </div>
+        <div class="impact-pill">
+          <span class="impact-icon">&#x1F3AF;</span>
+          <div class="impact-label">4x Lead Gap</div>
+          <div class="impact-desc">12 vs 48 website leads</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>Market Context</h4>
+      <p>When Hockley opened in 2020, their 5-mile radius held 43,982 people (Census-exact). Granger Pines today has approximately 27,000. Hockley sits 1.7 miles from the Cypress border (1,809 people per sq mi), giving it access to one of Houston's densest suburbs. Granger is building from a smaller but faster-growing base, on track toward approximately 40,000 by 2030 as Artavia and nearby communities build out.</p>
+    </div>
+
+    <h3 style="font-size:20px; font-weight:700; color:var(--white); margin: 32px 0 8px;">Top Keywords</h3>
+
+    <div style="overflow-x:auto; border-radius:12px;">
+      <table class="integration-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Spend</th>
+            <th>Clicks</th>
+            <th>CTR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dentist in Conroe TX</td>
+            <td>$411</td>
+            <td>42</td>
+            <td>7.6%</td>
+          </tr>
+          <tr>
+            <td>granger pines dental</td>
+            <td>$243</td>
+            <td>36</td>
+            <td>50.7%</td>
+          </tr>
+          <tr>
+            <td>dentist near me</td>
+            <td>$197</td>
+            <td>22</td>
+            <td>6.2%</td>
+          </tr>
+          <tr>
+            <td>dental clinic near</td>
+            <td>$104</td>
+            <td>13</td>
+            <td>3.2%</td>
+          </tr>
+          <tr>
+            <td>ped dentist near me</td>
+            <td>$71</td>
+            <td>10</td>
+            <td>2.6%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:20px; font-weight:700; color:var(--white); margin: 32px 0 8px;">Competitive Landscape</h3>
+
+    <div class="proof-grid">
+      <div class="proof-card">
+        <h4>Aspen Dental</h4>
+        <p>Outranks Granger Pines on roughly 6 out of 10 local Google searches. Locations in both New Caney and Conroe with heavy regional ad spend. We tightened the campaign to a strict 5-mile radius to concentrate every dollar where we can actually win.</p>
+      </div>
+      <div class="proof-card green">
+        <h4>Grangerland Dental</h4>
+        <p>Open since 2020 with 5.5 years of SEO. Ranks for 1,176 keywords. Not running Google Ads but generating free organic traffic every month. We are adding service pages, SEO blogs, and local citations to compete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 04: PRACTICE HEALTH -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Chapter 04 &middot; Practice Health</span>
+    <h2>Month 7. Already Beating Industry Benchmarks.</h2>
+
+    <div style="overflow-x:auto; border-radius:12px;">
+      <table class="integration-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Your Numbers</th>
+            <th>Benchmark</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Phone Answer Rate</td>
+            <td>99.5%</td>
+            <td>85-90%</td>
+            <td style="color: var(--green); font-weight: 700;">Excellent</td>
+          </tr>
+          <tr>
+            <td>New Patients/Month</td>
+            <td>58/month</td>
+            <td>25-40</td>
+            <td style="color: var(--green); font-weight: 700;">Above</td>
+          </tr>
+          <tr>
+            <td>Active Patients</td>
+            <td>389</td>
+            <td>200-400 (Yr 1)</td>
+            <td style="color: var(--green); font-weight: 700;">Exceeding</td>
+          </tr>
+          <tr>
+            <td>Avg. CPC</td>
+            <td>$8.09</td>
+            <td>$10-$20+</td>
+            <td style="color: var(--green); font-weight: 700;">Efficient</td>
+          </tr>
+          <tr>
+            <td>Postcard Call Rate</td>
+            <td>0.30%</td>
+            <td>0.5-2.0%</td>
+            <td style="color: var(--cyan); font-weight: 700;">Monitor</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout green">
+      <h4>Outperforming on a Smaller Base</h4>
+      <p>The 25 to 40 NP benchmark assumes 30,000 to 50,000 people within 5 miles (ADA minimum for a sustainable solo practice). Granger Pines has approximately 27,000, below that threshold. Adjusted for market size, Granger attracts 2.2 new patients per 1,000 residents per month. Granger Pines is outperforming relative to their actual market at month 7.</p>
+    </div>
+
+    <div class="unit-econ">
+      <span class="section-label">6-Month Practice Trend</span>
+      <h2 style="font-size:28px; font-weight:800; color:var(--white); margin-bottom:24px;">Jan to Jun 2026</h2>
+      <div class="econ-table-wrap">
+        <table class="econ-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Jan</th>
+              <th>Feb</th>
+              <th>Mar</th>
+              <th>Apr</th>
+              <th>May</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>New Patients</td>
+              <td>57</td>
+              <td>68</td>
+              <td>55</td>
+              <td>72</td>
+              <td>58</td>
+            </tr>
+            <tr>
+              <td>Active Patients</td>
+              <td>136</td>
+              <td>204</td>
+              <td>259</td>
+              <td>331</td>
+              <td>389</td>
+            </tr>
+            <tr>
+              <td>Net Production</td>
+              <td>$71,979</td>
+              <td>$40,687</td>
+              <td>$78,078</td>
+              <td>$40,150</td>
+              <td>$57,804</td>
+            </tr>
+            <tr>
+              <td>Collection %</td>
+              <td>45%</td>
+              <td>69%</td>
+              <td>50%</td>
+              <td>78%</td>
+              <td>67%</td>
+            </tr>
+            <tr>
+              <td>Fill Rate</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>99%</td>
+              <td>97%</td>
+              <td>96%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="econ-footnote">March was the highest net production month at $78,078. Active patients up +186% since January.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 05: MARKET GROWTH -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Chapter 05 &middot; Market Trajectory</span>
+    <h2>The Rooftops Are Coming. The Math Is Clear.</h2>
+
+    <div style="overflow-x:auto; border-radius:12px;">
+      <table class="integration-table">
+        <thead>
+          <tr>
+            <th>Community</th>
+            <th>Distance</th>
+            <th>Total Homes</th>
+            <th>Built</th>
+            <th>Coming</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Granger Pines</td>
+            <td>&lt;1 mi</td>
+            <td>~1,300</td>
+            <td>~650</td>
+            <td>~650</td>
+          </tr>
+          <tr>
+            <td>Artavia</td>
+            <td>~2.8 mi</td>
+            <td>~6,500</td>
+            <td>~1,800</td>
+            <td>~4,700</td>
+          </tr>
+          <tr>
+            <td>Grangerland Meadows</td>
+            <td>~1.4 mi</td>
+            <td>New</td>
+            <td>Just opened</td>
+            <td>Nearly all</td>
+          </tr>
+          <tr>
+            <td>Deer Trail + acreage</td>
+            <td>1-4 mi</td>
+            <td>Scattered</td>
+            <td>Partial</td>
+            <td>Ongoing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p>Even conservatively, about two-thirds of the homes within 5 miles are still to come. More than 15,000 new neighbors at roughly 3 per home. New-mover families are the highest-converting dental patients.</p>
+    </div>
+
+    <div class="roadmap-grid single-col">
+      <div class="roadmap-phase">
+        <span class="phase-tag green">Growth Trajectory</span>
+        <h3>New Patient Goal Path</h3>
+        <ul class="roadmap-list bulleted">
+          <li>Today (Month 7) ~27,000 residents: ~60/mo (actual)</li>
+          <li>End of Year 1 ~28,000 residents: 70-80/mo</li>
+          <li>Year 2 ~31,000 residents: 85-95/mo</li>
+          <li>Year 3 ~34,000 residents: 100-110/mo</li>
+          <li>~2030 ~40,000 residents: 115-130/mo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <h4>Bottom Line</h4>
+      <p>Granger Pines is already beating ADA new-practice benchmarks in a smaller but fast-growing market. The realistic path is steady, durable growth: 70 to 80 new patients a month by end of Year 1, past 100 within three years, toward 120+ by 2030 as the rooftops fill in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 06: NEXT STEPS -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Chapter 06 &middot; Recommended Actions</span>
+    <h2>Three Moves That Change the Trajectory.</h2>
+
+    <div class="roadmap-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="roadmap-phase">
+        <span class="phase-tag green">Immediate</span>
+        <h3>Increase Google Ads Budget</h3>
+        <p style="font-size:14px; color:var(--gray-300); line-height:1.65;">Aspen Dental is outranking you on 6 of 10 local searches. Increasing your budget by 30 to 50% puts Granger Pines in front of more patients at the same efficient cost per click.</p>
+      </div>
+      <div class="roadmap-phase">
+        <span class="phase-tag" style="color:var(--cyan); background:rgba(0,191,255,0.08); border-color:rgba(0,191,255,0.2);">30 Days</span>
+        <h3>Launch Facebook Ads at $500/Month</h3>
+        <p style="font-size:14px; color:var(--gray-300); line-height:1.65;">Target homeowners in ZIPs 77302 and 77306 with New Patient Special lead forms and website retargeting. Estimated 10 to 25 leads per month. Google captures today's searchers. Facebook builds tomorrow's pipeline.</p>
+      </div>
+      <div class="roadmap-phase">
+        <span class="phase-tag purple">Ongoing</span>
+        <h3>Fix the Intake Question</h3>
+        <p style="font-size:14px; color:var(--gray-300); line-height:1.65;">Every new patient call should include "How did you hear about us?" before the appointment is confirmed. Log the answer in Open Dental. This single change is the highest-leverage improvement available to the practice right now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div style="font-weight:900; font-size:18px; color:var(--white);">MedRebel</div>
+    <span class="footer-meta">Prepared for Granger Pines Dental &middot; June 2026</span>
+    <span class="footer-conf">Confidential</span>
+  </div>
+</footer>
+
+</body>
+</html>
